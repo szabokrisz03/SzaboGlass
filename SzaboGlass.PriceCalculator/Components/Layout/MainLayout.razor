@@ -1,0 +1,20 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider></MudThemeProvider>
+<MudDialogProvider></MudDialogProvider>
+<MudSnackbarProvider></MudSnackbarProvider>
+
+<MudLayout>
+
+    <MudAppBar>
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" OnClick="@(() => DrawerToggle())"></MudIconButton>
+    </MudAppBar>
+
+    <MudDrawer Open="@isOpen">
+        <NavMenu></NavMenu>
+    </MudDrawer>
+    
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+</MudLayout>
