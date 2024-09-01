@@ -1,3 +1,9 @@
 ﻿<MudNavMenu>
-    <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home" IconColor="Color.Secondary">Task Manager</MudNavLink>
+    <MudNavLink Href="/" Icon="@Icons.Material.Filled.Home" IconColor="Color.Secondary">Ár kalkulátor</MudNavLink>
+    <MudNavGroup Title="Szegfű bútor" @bind-Expanded=_isExpanded>
+        @foreach(var glassType in glassTypes)
+        {
+            <MudNavLink OnClick="@(() => NavigateToPage(glassType))">@glassType.Type</MudNavLink>
+        }
+    </MudNavGroup>
 </MudNavMenu>

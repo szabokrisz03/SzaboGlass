@@ -1,0 +1,27 @@
+﻿@page "/beszerzesi_ar/{Id:int}"
+@using SzaboGlass.Data.Dtos
+
+@inject NavigationManager _navigationManager;
+
+<MudDataGrid @ref="_dataGrid" T="GlassDto" ServerData="RefreshServerData">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">@glassType.Type</MudText>
+        <MudSpacer />
+        <MudTooltip Placement="Placement.Left" Text="Hozzáadás" >
+            <MudIconButton OnClick="@(() => OpenDialogAsync())" Icon="@Icons.Material.Filled.Add" Variant="Variant.Filled" Color="Color.Primary"></MudIconButton>
+        </MudTooltip>
+
+    </ToolBarContent>
+    <Columns>
+        <PropertyColumn Property="x => x.Name" Title="Név"></PropertyColumn>
+        <PropertyColumn Property="x => x.PurchasePriceCE" Title="CEGlass"></PropertyColumn>
+        <PropertyColumn Property="x => x.PurchasePriceMalyi" Title="Malyi"></PropertyColumn>
+        <PropertyColumn Property="x => x.RoundedPrice" Title="Kerekített ár"></PropertyColumn>
+        <PropertyColumn Property="x => x.PriceWithVAT" Title="Áfás ár"></PropertyColumn>
+        <PropertyColumn Property="x => x.SerialPrice" Title="Széria ár"></PropertyColumn>
+        <PropertyColumn Property="x => x.UniquePrice" Title="Egyedi ár"></PropertyColumn>
+        <PropertyColumn Property="x => x.Multiplier" Title="Szorzó"></PropertyColumn>
+    </Columns>
+</MudDataGrid>
+
+

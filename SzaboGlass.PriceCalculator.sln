@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzaboGlass.PriceCalculator", "SzaboGlass.PriceCalculator\SzaboGlass.PriceCalculator.csproj", "{C870F88C-2BE5-442A-89BA-2AEB351D06CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzaboGlass.PriceCalculator", "SzaboGlass.PriceCalculator\SzaboGlass.PriceCalculator.csproj", "{C870F88C-2BE5-442A-89BA-2AEB351D06CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzaboGlass.Data", "SzaboGlass.Data\SzaboGlass.Data.csproj", "{86404599-B2FC-47C4-AF18-C2D2260BD888}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SzaboGlass.Logic", "SzaboGlass.Logic\SzaboGlass.Logic.csproj", "{F23BBBFE-28C7-4B82-ADF6-10AC7BBDB75F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{86404599-B2FC-47C4-AF18-C2D2260BD888} = {86404599-B2FC-47C4-AF18-C2D2260BD888}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,14 @@ Global
 		{C870F88C-2BE5-442A-89BA-2AEB351D06CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C870F88C-2BE5-442A-89BA-2AEB351D06CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C870F88C-2BE5-442A-89BA-2AEB351D06CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86404599-B2FC-47C4-AF18-C2D2260BD888}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86404599-B2FC-47C4-AF18-C2D2260BD888}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86404599-B2FC-47C4-AF18-C2D2260BD888}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86404599-B2FC-47C4-AF18-C2D2260BD888}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F23BBBFE-28C7-4B82-ADF6-10AC7BBDB75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F23BBBFE-28C7-4B82-ADF6-10AC7BBDB75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F23BBBFE-28C7-4B82-ADF6-10AC7BBDB75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F23BBBFE-28C7-4B82-ADF6-10AC7BBDB75F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

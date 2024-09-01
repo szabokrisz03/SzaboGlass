@@ -1,0 +1,30 @@
+﻿<MudDialog>
+    <TitleContent>Üveg hozzáadása</TitleContent>
+    <DialogContent>
+        <MudTextField @bind-Value="Glass.Name"
+                      For="@(() => Glass.Name)"
+                      Immediate="true"
+                      Label="Név" />
+
+        <MudNumericField @bind-Value="Glass.PurchasePriceCE"
+                         For="@(() => Glass.PurchasePriceCE)"
+                         Immediate="true"
+                         Label="CEGlass" />
+
+        <MudNumericField @bind-Value="Glass.PurchasePriceMalyi"
+                         For="@(() => Glass.PurchasePriceMalyi)"
+                         Immediate="true"
+                         Label="Malyi" />
+
+        <MudNumericField @bind-Value="Glass.Multiplier"
+                         For="@(() => Glass.Multiplier)"
+                         Format="0.#"
+                         Step="0.1F"
+                         Immediate="true"
+                         Label="Szorzó" />
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Mégsem</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">Mentés</MudButton>
+    </DialogActions>
+</MudDialog>

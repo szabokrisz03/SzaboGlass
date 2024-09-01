@@ -1,4 +1,6 @@
+using MudBlazor;
 using MudBlazor.Services;
+using SzaboGlass.Logic.Config;
 using SzaboGlass.PriceCalculator.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,9 +9,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.RegisterDbContext(builder.Configuration);
+builder.Services.RegisterApplicationServices();
 builder.Services.AddRazorPages();
-builder.Services.AddServerSideBlazor();
-builder.Services.AddMudServices();
+builder.Services.AddServerSideBlazor().AddCircuitOptions(opt => opt.DetailedErrors = true);
+builder.Services.AddMudServices(config =>
+{
+    config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.TopCenter;
+    config.SnackbarConfiguration.ShowCloseIcon = true;
+    config.SnackbarConfiguration.VisibleStateDuration = 5000;
+    config.SnackbarConfiguration.HideTransitionDuration = 500;
+    config.SnackbarConfiguration.ShowTransitionDuration = 500;
+    config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
+});
 
 var app = builder.Build();
 

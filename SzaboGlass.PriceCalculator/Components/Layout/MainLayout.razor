@@ -1,11 +1,11 @@
 ﻿@inherits LayoutComponentBase
 
 <MudThemeProvider></MudThemeProvider>
-<MudDialogProvider></MudDialogProvider>
+<MudDialogProvider CloseOnEscapeKey="true"></MudDialogProvider>
 <MudSnackbarProvider></MudSnackbarProvider>
+<MudPopoverProvider />
 
 <MudLayout>
-
     <MudAppBar>
         <MudIconButton Icon="@Icons.Material.Filled.Menu" OnClick="@(() => DrawerToggle())"></MudIconButton>
     </MudAppBar>
